@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="voriewpt" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body >
+    <!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Projects</a>
+			<form >
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn" ><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden (click)="switchModeDark()" >
+			<label for="switch-mode" class="switch-mode" ></label>
+
+			<a  class="notification" (click)="afficher()" >
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+
+			<div *ngIf="showDropdown" class="dropdown-content">
+				<ul>
+				  <li *ngFor="let notification of notifications">
+					<a href="#">{{ notification.message }}</a>
+				  </li>
+				</ul>
+			  </div>
+
+			<a href="#" class="profile">
+				<img src="assets/moj.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+    
+</section>
+</body>
+</html>

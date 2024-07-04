@@ -1,0 +1,345 @@
+<main>
+    <div class="head-title">
+        <div class="left">
+            <div>
+                <h1>Tickets</h1>
+                <form >
+                    <div class="form-container">
+                    <div class="form-input">
+                        <input type="search" placeholder="Search...">
+                        <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+                        
+                    </div>
+                    <div class="avatar-group">
+                        <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                          <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                        </a>
+                        <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Romina Hadid">
+                          <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                        </a>
+                        <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Alexander Smith">
+                          <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                        </a>
+                        <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Jessica Doe">
+                          <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                        </a>
+                        <a> <i class='bx bxs-user-plus large-icon' (click)="addDeveloppeur()"></i>
+                        </a>
+                        
+                      </div>
+                    </div>
+                </form>
+            
+            </div>
+            
+        
+        </div>
+    </div>
+    <div class="table1">
+    <div class="table-data">
+    <div class="order">
+       
+        <table>
+            <thead>
+                <tr>
+                    <th><h1>A FAIRE</h1> </th>
+                    
+                </tr>
+            </thead>
+            <tbody id="tb-body">
+                <tr *ngFor="let ticket of TicketAfaire">
+                    <td>
+                       
+                        
+                                <div class="card-content " >
+                                  <span class="card-title">{{ticket.key}}</span> <i class='bx bx-comment' (click)="addcommentticket()"></i> 
+                                  <p>{{ticket.fields.summary}}</p>
+                                  <p *ngIf="ticket.fields.assignee">de {{ticket.fields.assignee.emailAddress}}</p>
+                                </div>
+                                <div class="card-action">
+                                  
+                                  
+                                </div>
+                             
+                            
+                    </td>
+              
+                </tr>
+               
+               
+                
+                
+                <tr>
+                    
+                    <td>
+                       
+                      <div class="create ticket-jira" id="btn-ctj">
+                        <i class='bx bx-plus-circle' (click)="addticketjira()">creer un ticket</i>
+                      </div> 
+                        
+                     
+                    
+            </td> 
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <div class="table-data">
+    <div class="order">
+       
+        <table>
+            <thead>
+                <tr>
+                    <th><h1>EN COURS</h1> </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of TicketEnCours ">
+                    <td>
+                       
+                        
+                                <div class="card-content1 ">
+                                  <span class="card-title">{{ticket.key}}</span><i class='bx bx-comment' (click)="addcommentticket()"></i> 
+                                  <p>{{ticket.fields.summary}}</p>
+                                  <p *ngIf="ticket.fields.assignee">de  {{ticket.fields.assignee.emailAddress}}</p>
+                                </div>
+                                <div class="card-action">
+                                  
+                                  
+                                </div>
+                             
+                            
+                    </td>
+              
+                </tr>
+                <tr>
+                   
+                    
+                </tr>
+                <tr>
+                    
+                </tr>
+                <tr>
+                 
+                   
+                    
+                </tr>
+                <tr>
+                    
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <div class="table-data">
+    <div class="order">
+       
+        <table>
+            <thead>
+                <tr>
+                    <th><h1>FINI</h1> </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of TicketFini">
+                    <td>
+                       
+                        
+                                <div class="card-content2">
+                                  <span class="card-title">{{ticket.key}}</span><i class='bx bx-comment' (click)="addcommentticket()"></i> 
+                                  <p>{{ticket.fields.summary}}</p>
+                                  <p *ngIf="ticket.fields.assignee">de  {{ticket.fields.assignee.emailAddress}}</p>
+                                </div>
+                                <div class="card-action">
+                                  
+                                  
+                                </div>
+                             
+                            
+                    </td>
+              
+                </tr>
+                <tr>
+                   
+                    
+                </tr>
+                <tr>
+                    
+                </tr>
+                <tr>
+                 
+                   
+                    
+                </tr>
+                <tr>
+                    
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+</main> 
+
+<!-----------------------------------------------create jira ticket----------------------------------------------------------------------->
+
+<div class="modal" id="modal-ap">
+    <span class="close-modal-btn" (click)="addticketjira()"><i class='bx bx-exit'></i></span>
+     <div class="wrapper123 ">
+                 
+                     
+                   </div>
+                   <div class="card-body">
+                     <form>
+                       
+                       <div class="">
+                         <div class="row">
+                           <div class="">
+                             <label class="form-control-label" for="input-username">Description Ticket</label>
+                             <div class="form-group">
+                              
+                               <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Que ce doit etre fait?" [(ngModel)]="summary" name="summary" >
+                             </div>
+                           </div>
+                         </div> 
+               
+                         
+                        
+                         <div class="row">
+                         
+                            <div class="dropdown">
+                              <button class="dropbtn"><span>effecter à un  developpeur <i class='bx bx-user-plus'></i></span> </button>
+                              <div class="dropdown-content">
+                                  <a href="javascript:void(0)"  *ngFor="let dev of listDev" (click)="addDev(dev.emailAddress)" class="dropdown-item" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                      <img alt="Image placeholder" src="/assets/moj.jpg" class="dropwn-img">
+                                      <span class="dropdown-item-text">{{dev.emailAddress}}</span>
+                                  </a>
+                              </div>
+                            </div>
+                              <div class="selected-dev">
+                                <div class="dev" *ngFor="let selected of selectedDevsList">
+                                  <span class="dev-name">{{selected}}</span>
+                                  <span class="dev-remove" (click)="removeDev(selected)">X</span>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            </div>
+                           
+                           
+                       
+                       <hr class="my-4" />
+                       
+                       
+                      
+                     </form>
+                 </div>
+             
+                 <div class="col-4 text-right" id="modal-ap">
+                   <button class="valider" (click)="closeModal();addTicket();createTicketJira()" >
+                   
+                    <i class='bx bx-check'></i>
+                     <span>AJout ticket</span>
+                   </button>  
+                 </div>
+             </div>
+  
+           
+ 
+ <!-- *********** MODAL END **************************** -->  
+ <div class="modal" id="modal-ap1">
+    <span class="close-modal-btn" (click)="addDeveloppeur()"><i class='bx bx-exit'></i></span>
+     
+                   <div class="card-body">
+                     <form>
+                       
+                       
+                         
+               
+                         
+                        
+                         <div class="row">
+                         
+                            <div class="dropdown">
+                              <button class="dropbtn"><span>add a developpeur <i class='bx bx-user-plus'></i></span> </button>
+                              <div class="dropdown-content">
+                                  <a href="javascript:void(0)"  *ngFor="let dev of listDev" (click)="addDev(dev.emailAddress)" class="dropdown-item" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                      <img alt="Image placeholder" src="/assets/moj.jpg" class="dropwn-img">
+                                      <span class="dropdown-item-text">{{dev.emailAddress}}</span>
+                                  </a>
+                              </div>
+                            </div>
+                              <div class="selected-dev">
+                                <div class="dev" *ngFor="let selected of selectedDevsList">
+                                  <span class="dev-name">{{selected}}</span>
+                                  <span class="dev-remove" (click)="removeDev(selected)">X</span>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          
+                           
+                           
+                       
+                       <hr class="my-4" />
+                       
+                       
+                      
+                     </form>
+                 </div>
+             
+                 <div class="col-4 text-right" id="modal-ap">
+                   <button class="valider" (click)="closeModal1();addDeveloppeurAlerte()" >
+                   
+                    <i class='bx bx-check'></i>
+                     <span>AJout Developpeur</span>
+                   </button>  
+                 </div>
+             </div>
+<!-- *********** ADD COMMENT TO TICKET **************************** -->  
+ <div class="modal" id="modal-ap2">
+  <span class="close-modal-btn" (click)="addcommentticket()"><i class='bx bx-exit'></i></span>
+   
+                 <div class="card-body">
+                   <form>
+                     
+                     
+                       
+             
+                       
+                      
+                       <div class="row">
+                       
+                        <div class="form-group">
+                          <label for="usr">Your comment:</label>
+                          <input type="text" class="form-control" id="usr">
+                        </div>
+                            
+                          </div>
+                        
+                         
+                         
+                     
+                     <hr class="my-4" />
+                     
+                     
+                    
+                   </form>
+               </div>
+           
+               <div class="col-4 text-right" id="modal-ap">
+                 <button class="valider" (click)="closeModal2();addcomment()" >
+                 
+                  <i class='bx bx-check'></i>
+                   <span>Add Comment</span>
+                 </button>  
+               </div>
+           </div>

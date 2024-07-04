@@ -1,0 +1,72 @@
+<div class="login_body">
+    <div class="wrapper">
+      <form action="#">
+        <img src="/assets/Logoo.png">
+          <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Fill out your name</ng-template>
+                <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="firstCtrl" required>
+                  </mat-form-field>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <label class="form-control-label" for="input-first-name">Outils</label>
+                      <div class="form-group">
+                        
+                        <div class="flex align-items-center">
+                          <p-checkbox  name="pizza" value="spring" ></p-checkbox><i class='bx bxl-spring-boot' ></i>
+                      </div>
+                      <div class="flex align-items-center">
+                          <p-checkbox  name="pizza" value="angular" ></p-checkbox><i class='bx bxl-angular' ></i>
+                      </div>
+                      <div class="flex align-items-center">
+                          <p-checkbox  name="pizza" value="bootstrap" ></p-checkbox><i class='bx bxl-bootstrap' ></i>
+                      </div>
+                      <div class="flex align-items-center">
+                  </div>
+                      </div>
+                    </div>
+                  </div>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" label="Fill out your password">
+              <form [formGroup]="secondFormGroup">
+                <mat-form-field>
+                  <mat-label>password</mat-label>
+                  <input type="password" matInput formControlName="secondCtrl" placeholder="your password"
+                         required > <i class='bx bx-lock-alt'></i> 
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+          <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Register' : 'Disable linear mode'}}
+          </button>
+          <div class="register">
+            <h4>vous avez dèja un compte? <a routerLink="/login">Login</a></h4>
+          </div>
+        
+      </form>
+    </div>
+  </div>

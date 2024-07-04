@@ -1,0 +1,155 @@
+
+<!--  -->
+<main id="contentToConvert">
+  <div class="head-title">
+    <div class="left">
+      <div>
+        <h1 class="inline">
+          <span class="title">Dashboard Project</span>
+          <span class="subtitle">DAS</span>
+      </h1>
+      
+      </div>
+      <div class="right">
+       <h2><i class='bx bx-download' (click)="downloadPdf()">Download</i></h2> 
+      </div>
+      
+    
+    </div>
+  </div>
+
+<div class="charts-container">
+  
+<div class="login_body">
+      <form action="#">
+        <h1>Project Status Developement </h1>
+        
+        <h4> </h4>
+        <hr class="my-4" />  
+        <div class="chart">
+            <p-chart type="pie" [data]="data"></p-chart>
+        </div>
+        <hr class="my-4" />
+        
+        <div class="dropdown">
+            <input type="checkbox" id="dropdown" />
+            <label for="dropdown" class="dropdown-btn">
+              <span>Today</span>
+              <span class="arrow"></span>
+            </label>
+            
+            <ul class="dropdown-content" role="menu">
+              <li><a href="#">Last 7 days</a></li>
+              <li><a href="#">Last 30 days</a></li>
+              
+            </ul>
+          </div>
+        
+      </form>
+  </div>
+
+
+
+
+  <div class="login_body">
+      <form action="#">
+        <h1>Project Status Testing</h1>
+        
+        <h4> </h4>
+        <hr class="my-4" />  
+        <div class="chart">
+          <p-chart type="line" [data]="data"  />
+        </div>
+        <hr class="my-4" />
+        
+        <div class="dropdown">
+            <input type="checkbox" id="dropdown" />
+            <label for="dropdown" class="dropdown-btn">
+              <span>Today</span>
+              <span class="arrow"></span>
+            </label>
+            
+            <ul class="dropdown-content" role="menu">
+              <li><a href="#">Last 7 days</a></li>
+              <li><a href="#">Last 30 days</a></li>
+              
+            </ul>
+          </div>
+        
+      </form>
+  </div>
+
+
+
+
+  <div class="login_body">
+      <form action="#">
+        <h1>Project Status Deployement</h1>
+        
+        <h4> </h4>
+        <hr class="my-4" />  
+        <div class="chart">
+          <p-chart type="radar" [data]="data"  />
+        </div>
+        <hr class="my-4" />
+        
+        <div class="dropdown">
+            <input type="checkbox" id="dropdown" />
+            <label for="dropdown" class="dropdown-btn">
+              <span>Today</span>
+              <span class="arrow"></span>
+            </label>
+            
+            <ul class="dropdown-content" role="menu">
+              <li><a href="#">Last 7 days</a></li>
+              <li><a href="#">Last 30 days</a></li>
+              
+            </ul>
+          </div>
+        
+      </form>
+  </div>
+  <div class="createticketjira" id="btn-ctj">
+    <i class='bx bx-plus-circle' (click)="addcommentticket()">Ajouter Commentaire pour ce projet</i>
+  </div> 
+</div>
+</main>
+  <!-- *********** ADD COMMENT TO TICKET **************************** -->  
+ <div class="modal" id="modal-ap2">
+  <span class="close-modal-btn" (click)="addcommentticket()"><i class='bx bx-exit'></i></span>
+   
+                 <div class="card-body">
+                   <form>
+                     
+                     
+                       
+             
+                       
+                      
+                       <div class="row">
+                       
+                        <div class="form-group">
+                          <label for="usr">Your comment:</label>
+                          <input type="text" class="form-control" id="usr">
+                        </div>
+                            
+                          </div>
+                        
+                         
+                         
+                     
+                     <hr class="my-4" />
+                     
+                     
+                    
+                   </form>
+               </div>
+           
+               <div class="col-4 text-right" id="modal-ap">
+                 <button class="valider" (click)="closeModal2();addcomment()" >
+                 
+                  <i class='bx bx-check'></i>
+                   <span>Add Comment</span>
+                 </button>  
+               </div>
+           </div>

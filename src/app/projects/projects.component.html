@@ -1,0 +1,469 @@
+
+ <div class="modal" id="modal-ap">
+   <span class="close-modal-btn" (click)="addModal()"><i class='bx bx-exit'></i></span>
+    <div class="wrapper123 ">
+                
+                    <div class="row align-items-center">
+                      <div class="ajout">
+                        <h2 >Ajouter-Projet</h2>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      
+                      <div class="">
+                        <div class="row">
+                          <div class="">
+                            <label class="form-control-label" for="input-username">NameProject</label>
+                            <div class="form-group">
+                             
+                              <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="NameProject" value="">
+                            </div>
+                          </div>
+                        </div>
+              
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-username">Line of Services</label>
+                          </div> 
+                        <select class="form-select custom-select" aria-label="Default select example">
+                         
+                          <option value="1">DigiTech</option>
+                          <option value="2">GuideWire</option>
+                          <option value="3">Sap</option>
+                          <option value="3">SalesForce</option>
+                          <option value="3">Delievry</option>
+                          <option value="3">Data</option>
+                        </select>
+                           <div class="row">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-username">Date</label> </div>
+                             <input type="date">
+                        
+                              </div>
+                           </div>
+                          
+                          
+                      
+                      <hr class="my-4" />
+                      
+                      
+                     
+                    </form>
+                </div>
+            
+                <div class="col-4 text-right" id="modal-ap">
+                  <button class="valider" (click)="addModal();NextInfoProject()" >
+                  
+                    <i class='bx bx-right-arrow-alt' ></i>
+                    <span>NextInfoproject</span>
+                  </button>  
+                </div>
+            </div>
+ 
+          
+
+<!-- *********** MODAL END **************************** -->
+
+<div class="modal" id="modal-ap-next">
+ 
+   <div class="wrapper123 ">
+               
+                   <div class="row align-items-center">
+                     <div class="ajout">
+                       
+                     </div>
+                     
+                   </div>
+                 </div>
+                 <div class="card-body">
+                   <form>
+                     
+                     <div class="dropdown">
+                       <div class="row">
+
+                        <p-fieldset legend="Busines.Owner" [toggleable]="true">
+                          
+                              <label class="form-control-label" for="input-username">Name</label>
+                                <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Name" value="">
+                              <label class="form-control-label" for="input-usermail">Email</label>
+                                <input type="email" id="input-username" class="form-control form-control-alternative" placeholder="Email" value="">
+                              
+                          
+                        </p-fieldset>
+                       </div>
+                     
+                       
+                       <div class="row">
+                        <p-fieldset legend="Technical.Owner" [toggleable]="true">
+                          
+                              <label class="form-control-label" for="input-username">Name</label> 
+                                <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Name" value="">
+                                <label class="form-control-label" for="input-usermail">Email</label>
+                                <input type="email" id="input-username" class="form-control form-control-alternative" placeholder="Email" value="">
+                              
+                          
+                      </p-fieldset>
+                      
+                       </div>
+                     
+                   
+
+                       <div class="row">
+                         
+                             <div class="dropdown">
+                               <button class="dropbtn"><span>ajouter developpeurs <i class='bx bx-user-plus'></i></span> </button>
+                               <div class="dropdown-content">
+                                   <a href="javascript:void(0)"  *ngFor="let dev of listDev" (click)="addDev(dev.displayName)" class="dropdown-item" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                       <img alt="Image placeholder" src="/assets/moj.jpg" class="dropwn-img">
+                                       <span class="dropdown-item-text">{{dev.displayName}}</span>
+                                   </a>
+                               </div>
+                             </div>
+                               <div class="selected-dev">
+                                 <div class="dev" *ngFor="let selected of selectedDevsList">
+                                   <span class="dev-name">{{selected}}</span>
+                                   <span class="dev-remove" (click)="removeDev(selected)">X</span>
+                                 </div>
+                               </div>
+                               
+                             </div>
+                           </div>
+                         
+                     
+                     <hr class="my-4" />
+                     
+                    
+                         
+                       
+                    
+                   </form>
+               </div>
+           
+               <div class="col-4 text-right" id="modal-ap">
+                <button class="precedenct"  (click)="addModal();NextInfoProject()">
+                
+                  <i class='bx bx-left-arrow-alt' ></i>
+                  <span>precInfoproject</span>
+                </button>
+                 <button class="valider"  (click)="NextInfoProject1()">
+                 
+                  <i class='bx bx-right-arrow-alt' ></i>
+                   <span>NextInfoproject</span>
+                 </button>  
+                 
+               </div>
+
+               
+           </div>
+           
+
+         
+
+<!-- ***********Next  MODAL END **************************** -->
+<div class="modal" id="modal-ap-next1">
+  
+   
+                 <div class="card-body">
+                   <form>
+                     
+                     <div class="dropdown">
+                       <div class="row">
+                        
+                        <p-fieldset legend="Technologies" [toggleable]="true">
+                          
+      
+                              <form #form="ngForm">
+                               <div id="fieldset-container">
+                                  <!-- Champ de texte et label conditionnels -->
+                                      <div *ngIf="fieldsetAjoute" class="form-group">
+                                           <label for="nouvelleLegende">Nom de la Technologie</label>
+                                           <input type="text" class="form-control" id="nouvelleLegende" [(ngModel)]="nouvelleLegende" name="nouvelleLegende" placeholder="Nom de la Technologie">
+  
+                                      </div>
+  
+                                  <!-- Bouton d'ajout de fieldset -->
+                                 <button class="btn btn-primary" (click)="ajouterFieldset(form)">Ajouter une Technologie</button>
+                                 </div>
+                              </form>
+
+
+
+
+                        </p-fieldset>
+                       </div>
+                     
+                       
+                       
+                     
+                   
+
+                       
+                           </div>
+                         
+                     
+                     <hr class="my-4" />
+                     
+                    
+                         
+                       
+                    
+                   </form>
+               </div>
+           
+               <div class="col-4 text-right" id="modal-ap">
+                <button class="precedenct"  (click)="NextInfoProject1();NextInfoProject()">
+                
+                  <i class='bx bx-left-arrow-alt' ></i>
+                  <span>precInfoproject</span>
+                </button>
+                 <button class="valider" (click)="NextInfoProject11()" >
+                 
+                  <i class='bx bx-check'></i>
+                   <span>NextInfoProject</span>
+                 </button>  
+                 
+               </div>
+
+               
+           </div>
+           
+
+         
+
+<!-- ***********Next  MODAL END 1**************************** -->
+<!-- ***********Next new  MODAL END **************************** -->
+<div class="modal" id="modal-ap-next11">
+  
+   
+  <div class="card-body">
+    <form>
+      
+      <div class="dropdown">
+        
+      
+        
+        <div class="row">
+         <p-fieldset legend="Environement" [toggleable]="true">
+           
+           <p-fieldset legend="URL" [toggleable]="true">
+             <p-fieldset legend="GitLab" [toggleable]="true">
+               <p-fieldset legend="Branches" [toggleable]="true"> 
+                 <legend>
+                   <label *ngFor="let branche of branches; let i = index">
+                     <span *ngIf="i > 0">Branche {{ i + 1 }}</span>
+                     <div class="input-group mb-3">
+                       <span class="input-group-text" (click)="ajouterChamp()" *ngIf="i === branches.length - 1">
+                         <i class='bx bx-plus-medical icon-orange'></i>
+                       </span>
+                       <input type="url" id="input-username" class="form-control form-control-alternative" placeholder="Branche {{ i + 1 }}" value="" [(ngModel)]="branches[i]">
+                     </div>
+                   </label>
+                 </legend>
+               </p-fieldset>
+               
+             </p-fieldset>
+           
+           </p-fieldset>
+             
+       </p-fieldset>
+       
+        </div>
+      
+    
+
+        
+            </div>
+          
+      
+      <hr class="my-4" />
+      
+     
+          
+        
+     
+    </form>
+</div>
+
+<div class="col-4 text-right" id="modal-ap">
+ <button class="precedenct"  (click)="NextInfoProject11();NextInfoProject1()">
+ 
+   <i class='bx bx-left-arrow-alt' ></i>
+   <span>precInfoproject</span>
+ </button>
+  <button class="valider" (click)="NextInfoProject111()" >
+  
+   <i class='bx bx-check'></i>
+    <span>NextInfoProject</span>
+  </button>  
+  
+</div>
+
+
+</div>
+
+
+
+
+<!-- ***********Next  MODAL END 1**************************** -->
+<!-- ***********Next new new  MODAL END **************************** -->
+<div class="modal" id="modal-ap-next111">
+  
+   
+  <div class="card-body">
+    <form>
+      
+      <div class="dropdown">
+        
+      
+        
+        <div class="row">
+          <p-fieldset legend="Modules " [toggleable]="true">
+            <p-fieldset legend="Repos" [toggleable]="true">
+              
+              <legend>
+                <label *ngFor="let repo of reposs; let i = index">
+                  <span *ngIf="i > 0">Repo {{ i + 1 }}</span>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" (click)="ajouterRepo()" *ngIf="i === reposs.length - 1">
+                      <i class='bx bx-plus-medical icon-orange'></i>
+                    </span>
+                    <input type="url" id="input-username" class="form-control form-control-alternative" placeholder="Repo {{ i + 1 }}" value="" [(ngModel)]="reposs[i]">
+                  </div>
+                </label>
+              </legend>
+        
+            </p-fieldset>
+              
+            
+        
+         </p-fieldset>
+       
+        </div>
+      
+    
+
+        
+            </div>
+          
+      
+      <hr class="my-4" />
+      
+     
+          
+        
+     
+    </form>
+</div>
+
+<div class="col-4 text-right" id="modal-ap">
+ <button class="precedenct"  (click)="NextInfoProject111();NextInfoProject11()">
+ 
+   <i class='bx bx-left-arrow-alt' ></i>
+   <span>precInfoproject</span>
+ </button>
+  <button class="valider" (click)="closeModal();addproject()" >
+  
+   <i class='bx bx-check'></i>
+    <span>ConfirmProject</span>
+  </button>  
+  
+</div>
+
+
+</div>
+
+
+
+
+<!-- ***********Next  MODAL END 1**************************** -->
+	<main>
+		<div class="head-title">
+			<div class="left">
+				<div>
+					<h1>Projects</h1>
+				
+				</div>
+				
+			
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="table-data ">
+			<div class="order">
+				<div class="head">
+					<h3>Recent Projects</h3>
+			
+					<i (click)="addModal()" class='bx bx-folder-plus'></i>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>project</th>
+							<th>Key</th>
+                            <th>Liste developpeurs</th>
+                            <th>outils</th>
+                            <th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let project of projects">
+							<td>
+								<img src="assets/moj.jpg">
+								<p> <a [routerLink]="['/team', project.key]">{{project.name}}</a></p>
+							</td>
+
+							<td > <p>
+                <a [routerLink]="['/details']">
+                 {{project.key}} 
+                </a>
+                </p>
+              </td>
+              
+                            <td> 
+                                <div class="avatar-group">
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                      <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                                    </a>
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Romina Hadid">
+                                      <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                                    </a>
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Alexander Smith">
+                                      <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                                    </a>
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Jessica Doe">
+                                      <img alt="Image placeholder" src="/assets/moj.jpg" class="rounded-circle">
+                                    </a>
+                                  </div>
+                            </td>
+                            <td> 
+                                <div class="avatar-group">
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                      <img alt="Image placeholder" src="/assets/Quarkus.png" class="rounded-circle">
+                                    </a>
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Romina Hadid">
+                                      <img alt="Image placeholder" src="/assets/angular.png" class="rounded-circle">
+                                    </a>
+                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Alexander Smith">
+                                      <img alt="Image placeholder" src="/assets/bootstrap.jpg" class="rounded-circle">
+                                    </a>
+                                    
+                                  </div>
+                            </td>
+							             <td> <a routerLink="statistique"><span class="status completed" >Voir Status</span></a></td>
+                           <td> <i class='bx bxs-x-circle' ></i></td>
+                           <td> <i class='bx bx-edit-alt'></i></td>
+						</tr>
+						
+                        
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</main>

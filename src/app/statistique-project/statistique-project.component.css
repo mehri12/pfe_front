@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+main {
+	width: calc(100% - 280px);
+	padding: 36px 24px;
+	font-family: var(--poppins);
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+	margin-left: 280px;
+	background-color: #ececec;
+	margin-top: 15px;
+	border-radius: 20px;
+    height: 850px;
+}
+ main .head-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
+}
+ main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: var(--dark);
+	margin-top: 54px;
+}
+main .head-title .right h2 {
+  margin-left: 1400px;
+  margin-top: -19px;
+    border-radius: 10px;
+    background-color: orange;
+    cursor: pointer;
+}
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.subtitle {
+  font-size: 1em;
+  font-weight: normal;
+  margin-left: 10px; 
+  color: orange;
+}
+.inline {
+  display: inline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+main .charts-container{
+  position: relative;
+  overflow: hidden;
+  background: #ececec;
+  padding: 1%;
+  height: 100%;
+}
+
+.login_body {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  outline: 1px solid rgba(128, 128, 128, 0.6);
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 0px 20px;
+  box-shadow: 0px 0px 5px 1px rgba(128, 128, 128, 0.6);
+}
+
+.login_body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ /* background:url('/assets/backimage.png') ;
+ /* background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;*/
+/*   background-position: center;
+ */  background-size: cover;
+}
+.createticketjira{
+  cursor: pointer;
+  color: orange;
+  padding: 20px;
+  margin-top: 40px;
+}
+.modal{
+  position: absolute;
+  z-index: 3;
+  left:30%;
+  top:20%;
+  width: 24%;
+  height: 50%;
+  background-color: #ececec;
+  box-shadow: 0px 0px 10px 3px gray;
+  border-radius: 25px;
+  padding: 2% 5%;
+}
+.valider{
+    
+  cursor: pointer;
+  background-color: orange;
+  padding: 10PX;
+  border-radius: 10px;
+  margin-top: 75%;
+  margin-right: -55px;
+}
+.bx-exit:before {
+  content: "\ed2d";
+  margin-left: 320px;
+  color: orange;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 600px;
+  height: 782px;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0px 0px 10px 3px rgba(128,128,128,0.8);
+  margin-left: -806px;
+  background-color: white;
+  margin-left: 20px;
+ 
+}
+.wrapper img{
+  width: 188px;
+  margin-left: 171px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+  padding-top: 28px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color:black;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 35px 0;
+  color: #fff;
+}
+
+#remember {
+  accent-color: #fff;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 8px;
+}
+
+.wrapper a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background:black;
+  color: WHITE;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+  margin-top: 29px;
+}
+
+button:hover {
+  background: #eb8526;
+  transition-duration: 0.3s;
+}
+button:active {
+  background: black;
+}
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+}
+.wrapper p{
+    color:black;
+}
+.wrapper h4{
+    color:black;
+    MARGIN-LEFT: 20px;
+    
+}
+
+.wrapper a{
+    color:orange;
+}
+/* Dropdown styles */
+
+.dropdown {
+    max-width: 13em;
+    margin: 80px auto 0;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px
+  }
+  
+  .dropdown-btn {
+    background: #1d1f24;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    
+  }
+  
+  .arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+  }
+  
+  .dropdown-content {
+    list-style: none;
+    position: absolute;
+    top: 3.2em;
+    width: 100%;
+    visibility: hidden;
+  /*   overflow: hidden; */
+    transform: translateY(-1em);
+    transition: transform ease 0.3s;
+  }
+  
+  input[type="checkbox"]:checked ~ .dropdown-content {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-content li {
+    background: #2f3238;
+    border-radius: 0.5em;
+  }
+  
+  input[type="checkbox"]:checked + label > .arrow {
+    transform: rotate(180deg);
+  }
+  
+  input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  input[type="checkbox"]:focus + label {
+    box-shadow: 0 0 20px rgb(83, 83, 83);
+  }
+  
+  .dropdown-content li:hover {
+    background: #1d1f24;
+  }
+  
+  .dropdown-content li a {
+    display: block;
+    padding: 0.7em 0.5em;
+    color: #fff;
+    margin: 0.1em 0;
+    text-decoration: none;
+  }

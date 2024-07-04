@@ -1,0 +1,197 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<main>
+<div class="container bootstrap snippets bootdey">
+
+    <div class="head-title">
+        <div class="left">
+            <div>
+                <h1>Mon Compte</h1>
+            
+            </div>
+            
+        
+        </div>
+    </div>
+
+  <div class="profile-nav col-md-3"  >
+      <div class="panel-profil">
+          <div class="user-heading round">
+              <a href="#">
+                  <img src="/assets/moj.jpg" alt="">
+              </a>
+              <h1>Yassine Hamza</h1>
+              <p>yassine.hamza@pwc.com</p>
+          </div>
+
+          <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
+              <li  (click)="adduseractivity()"><a > <i class="fa fa-calendar"></i> Recent Activity <span class="label label-warning pull-right r-activity">3</span></a></li>
+               <li (click)="adduserinfo()"><a> <i  class="fa fa-edit"></i> Edit profile</a></li>
+          </ul>
+      </div>
+  </div>
+
+<div class="profile-info col-md-6"  id="userinformation">
+    <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <h3 class="mb-0"></h3>
+          </div>
+          <div class="col-4 text-right">
+           <span> <a (click)="adduserinfo()" class="btn btn-sm btn-primary">Valid-Edit <i class='bx bx-check'></i></a>  </span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form>
+          <h6 class="heading-small text-muted mb-4">User information</h6>
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-username">Username</label>
+                  <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-email">Email address</label>
+                  <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="nom@pwc.com">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-first-name">First name</label>
+                  <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-last-name">Last name</label>
+                  <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4" />
+          <!-- Address -->
+          <h6 class="heading-small text-muted mb-4"></h6>
+          <div class="pl-lg-4">
+            
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-city">photo profil</label>
+                  <input type="file" id="img" name="img" accept="image/*">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>  
+</div>
+<div class="profile-info col-md-6"  id="useractivity"  >
+    <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0">
+        <div class="row align-items-center" >
+          <div class="col-8">
+            <h3 class="mb-0"></h3>
+          </div>
+          <div class="col-4 text-right">
+           <span> <a (click)="adduseractivity()" class="btn btn-sm btn-primary">Valid-Edit <i class='bx bx-check'></i></a>  </span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form>
+          <h6 class="heading-small text-muted mb-4">User Activity</h6>
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-username">Project Name</label>
+                  <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-email">Taches <i class='bx bx-task'></i></label>
+                  
+                  <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                           
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>tache</th>
+                                    <th>Date Order</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        
+                                        <p>ekhdem_aala_rouhk </p>
+                                    </td>
+                                    <td>03-10-2024</td>
+                                    <td><select class="status completed"> 
+                                        <option value="completed">completed</option>
+                                        <option value="pending" >pending</option>
+                                        <option value="process">process</option>
+                                        
+                                      </select></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      
+                                        <p>ekhdem_aala_rouhk</p>
+                                    </td>
+                                    <td>05-25-2024</td>
+                                    <td><select class="status pending">Pending
+                                        <option value="completed">completed</option>
+                                        <option value="pending">pending</option>
+                                        <option value="process">process</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        
+                                        <p>creer dashboard</p>
+                                    </td>
+                                    <td>02-28-2024</td>
+                                    <td><select class="status process">Process
+                                        <option value="completed">completed</option>
+                                        <option value="pending">pending</option>
+                                        <option value="process">process</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          
+          <hr class="my-4" />
+          <!-- Address -->
+          <h6 class="heading-small text-muted mb-4"></h6>
+          <div class="pl-lg-4">
+            
+            
+          </div>
+          </div>
+        </form>
+    </div>
